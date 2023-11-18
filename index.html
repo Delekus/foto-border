@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Foto Border</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		/*Второй вариант*/
+		/*.border {
+			display: inline-block;
+			margin: 150px 100px;
+			position: relative;
+		}
+
+		.border img {
+			border: 10px #91ee8e solid;
+		}
+
+
+		.border::before {
+			content: '';
+			border-right: 10px #018001 solid;
+			border-bottom: 10px #018001 solid;
+			display: inline-block;
+			position: absolute;
+			top: 5px;
+			left: 5px;
+			width: 395px;
+			height: 195px;
+		}
+
+		.border::after {
+			content: '';
+			border-right: 10px #006500 solid;
+			border-bottom: 10px #006500 solid;
+			display: inline-block;
+			position: absolute;
+			top: 15px;
+			left: 15px;
+			width: 395px;
+			height: 195px;
+		}*/
+		/*Второй вариант*/
+
+
+
+
+		/*Первый вариант*/
+		.border {
+			display: block;
+			margin: 150px auto;
+			position: relative;
+		}
+
+		.border img {
+			border: 10px #91ee8e solid;
+			display: block;
+			margin: 0 auto;
+			position: relative;
+			z-index: 3;
+		}
+
+		.border::after {
+			content: "";
+			position: absolute;
+			display: block;
+			top: 0;
+			left: 50%;
+			margin: 10px 0 0 -190px;
+			width: 400px;
+			height: 200px;
+			background-color: #018001;
+			z-index: 2;
+		}
+
+		.border::before {
+			content: "";
+			position: absolute;
+			display: block;
+			top: 0;
+			left: 50%;
+			margin: 20px 0 0 -180px;
+			width: 400px;
+			height: 200px;
+			background-color: #006500;
+			z-index: 1;
+		}
+		/*Первый вариант*/
+
+
+		/*
+		.clearfix::before,
+    .clearfix::after {
+      content: "";
+      display: table;
+    }
+
+    .clearfix::after {
+      clear: both;
+    }
+*/
+	</style>
+</head>
+
+<body>
+	<div class="border ">
+		<img src="http://placehold.it/380x180" alt="example image">
+	</div>
+
+
+</html>
